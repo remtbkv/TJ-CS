@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Game</title>
+</head>
+<body>
+    <a id='game' href="game"></a>
+    <h3 id="requests"></h3>
+</body>
+<script>
+    async function game() {
+        let stats = await fetch("http://127.0.0.1:8080/api/stats").then(response => response.json())
+        document.getElementById('game').innerHTML = stats["game"]!==null ? "Current game" : "New game"
+    }
+    async function requests() {
+        let re = document.getElementById('requests')
+        let challenger = (await fetch("http://127.0.0.1:8080/api/requests").then(response => response.json())).map(el => el["challenger"])
+        re.innerHTML = challenger ? `Challenger(s): ${challenger.join(", ")}` : "No game requests"
+    }
+    requests()
+    game()
+</script>
+</html>

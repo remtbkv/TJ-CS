@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Form</title>
+</head>
+
+<body>
+    <h1>Enter coordinates for weather data</h1>
+    <form action="/getweather/results" method='POST'>
+        <p>Latitude</p>
+        <input type="text" name="latitude">
+        <p>Longitude</p>
+        <input type="text" name="longitude">
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

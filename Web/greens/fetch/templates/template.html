@@ -1,0 +1,79 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+</head>
+
+<body>
+
+  <h3>Eggs</h3>
+  <p id='eggs'></p>
+  <button type="button" onclick="doTheFetch()">PRESS ME</button>
+
+  <script>
+    async function doTheFetch() {
+      const response = await fetch('http://127.0.0.1/kitchen')
+      const data = await response.json()
+      let counter_span = document.getElementById("eggs")
+      counter_span.innerHTML = data.eggs;
+    }    
+  </script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+  <h3>FOOD</h3>
+  <p id='food'></p>
+  <button type="button" onclick="doTheFetch('eggs')">Show Eggs</button>
+  <button type="button" onclick="doTheFetch('onions')">Show Onion</button>
+  <button type="button" onclick="doTheFetch('garlic')">Show Garlic</button>
+  <br><br>
+  <button type="button" onclick="increase('eggs')">Increase eggs</button>
+  <button type="button" onclick="increase('onions')">Increase onions</button>
+
+  <script>
+    async function doTheFetch(food) {
+        const response = await fetch('http://127.0.0.1/kitchen')
+        const data = await response.json()
+        let counter_span = document.getElementById("food")
+        if (food==="eggs")
+          counter_span.innerHTML = "Eggs: "+data.eggs;
+        else if (food === "onions")
+          counter_span.innerHTML = "Onions: " +data.onions;
+        else if (food === "garlic")
+          counter_span.innerHTML = "Garlic: " +data.garlic;
+    }    
+
+    // async function increase(food) {
+    //   const response = await fetch('http://127.0.0.1/kitchen')
+    //   const data = await response.json()
+    //   console.log(data)
+    //   let counter_span = document.getElementById("food")
+    //   if (food == "eggs") {
+    //     data.eggs++;
+    //     counter_span.innerHTML = "Eggs: " + data.eggs;
+    //     redirect('/set/{{food}}/{{data.eggs}}')
+    //   }
+    //   else if (food == "onions") {
+    //     data.onions++;
+    //     counter_span.innerHTML = "Onions: " +data.onions;
+    //     redirect('/set/{{food}}/{{data.onions}}')
+    //   }
+    //   else if (food == "garlic") {
+    //     data.garlic++;
+    //     counter_span.innerHTML = "Garlic: " + data.garlic;
+    //     redirect('/set/{{food}}/{{data.garlic}}')
+    //   }
+    // }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+C016 000  -         jmp     START     skip around the variables
+0000 001  zero      dw      -         define variable `zero`
+0001 002  one       dw      -         define variable `one`
+000a 003  ten       dw      -         define variable `ten`
+000b 004  eleven    dw      -         define variable `eleven`
+0000 005  temp      dw      -         define variable `temp`
+0000 006  i         dw      -         define variable `i`
+0000 007  j         dw      -         define variable `j`
+4009 008  sinp      dw      -         define variable `store-inp`
+0000 009  inp1      dw      -         define variable `inp1`
+0000 00a  inp2      dw      -         define variable `inp2`
+0000 00b  inp3      dw      -         define variable `inp3`
+0000 00c  inp4      dw      -         define variable `inp4`
+0000 00d  inp5      dw      -         define variable `inp5`
+0000 00e  inp6      dw      -         define variable `inp6`
+0000 00f  inp7      dw      -         define variable `inp7`
+0000 010  inp8      dw      -         define variable `inp8`
+0000 011  inp9      dw      -         define variable `inp9`
+0000 012  inp10     dw      -         define variable `inp10`
+3009 013  linp      dw      -         define variable `load-inp`
+6009 014  subinp    dw      -         define variable `subtract-inp`
+0000 015  label     dw      -         comments
+1000 016  START     readH   -         read hex from keyboard
+4009 017  storer    store   -         store accumulator to `inpx`
+3017 018  -         load    storer    load `storer` into accumulator
+5002 019  -         add     one       add `one` to accumulator
+4017 01A  -         store   storer    store accumulator to `storer`
+3006 01B  -         load    i         load `i` into accumulator
+5002 01C  -         add     one       add `one` to accumulator
+4006 01D  -         store   i         store accumulator to `i`
+6003 01E  -         sub     ten       subtract `ten` from accumulator
+D021 01F  -         dw      RESET     jump to `RESET` if accumulator equals 0
+C016 020  -         jmp     START     jump to `START`
+3001 021  RESET     load    zero      load `zero` into accumulator
+4006 022  -         store   i         store accumulator to `i`
+3006 023  iLOOP     load    i         load `i` into accumulator
+5002 024  -         add     one       add `one` to accumulator
+4006 025  -         store   i         store accumulator to `i`
+6004 026  -         sub     eleven    subtract `eleven` from accumulator
+D048 027  -         jmpe    pEND      jump to `pEND` if accumulator equals 0
+3001 028  -         load    zero      load `zero` into accumulator
+4007 029  -         store   j         store accumulator to `j`
+3013 02A  pLOOP     load    linp      load `linp` into accumulator
+5007 02B  -         add     j         add `j` to accumulator
+4043 02C  -         store   li1       store accumulator to `li1`
+5002 02D  -         add     one       add `one` to accumulator
+403D 02E  -         store   li2       store accumulator to `li2`
+4041 02F  -         store   SWAP      store accumulator to `SWAP`
+3008 030  -         load    sinp      load `sinp` into accumulator
+5007 031  -         add     j         add `j` to accumulator
+4046 032  -         store   si1       store accumulator to `si1`
+5002 033  -         add     one       add `one` to accumulator
+4044 034  -         store   si2       store accumulator to `si2`
+3014 035  -         load    subinp    load `subinp` into accumulator
+5007 036  -         add     j         add `j` to accumulator
+403E 037  -         store   subi1     store accumulator to `subi1`
+3007 038  jLOOP     load    j         load `j` into accumulator
+5002 039  -         add     one       add `one` to accumulator
+4007 03A  -         store   j         store accumulator to `j`
+6003 03B  -         sub     ten       subtract `ten` from accumulator
+D023 03C  -         jmpe    iLOOP     jump to `iLOOP` if accumulator equals 0
+300A 03D  li2       load    inp2      load `inp2` into accumulator
+6009 03E  subi1     sub     inp1      subtract `inp1` from accumulator
+E041 03F  -         jmpl    SWAP      jump to `SWAP` if accumulator < 0
+C02A 040  -         jmp     pLOOP      jump to `pLOOP`
+300A 041  SWAP      load    inp2      load `inp2` into accumulator
+4005 042  -         store   temp      store accumulator to `temp`
+3009 043  li1       load    inp1      load `inp1` into accumulator
+400A 044  si2       store   inp2      store accumulator to `inp2`
+3005 045  -         load    temp      load `temp` into accumulator
+4009 046  si1       store   inp1      store accumulator to `inp1`
+C02A 047  -         jmp     pLOOP     jump to `pLOOP`
+3001 048  pEND      load    zero      load `zero` into accumulator
+4005 049  -         store   temp      store accumulator to `temp`
+3009 04A  END       load    inp1      load `inp1` into accumulator
+1800 04B  -         write   -         write hex from accumulator
+304A 04C  -         load    END       load `END` into accumulator
+5002 04D  -         add     one       add `one` to accumulator
+404A 04E  -         store   END       store accumulator to `END`
+3005 04F  -         load    temp      load `temp` into accumulator
+5002 050  -         add     one       add `one` to accumulator
+4005 051  -         store   temp      store accumulator to `temp`
+6003 052  -         sub     ten       subtract `ten` from accumulator
+D055 053  -         jmpe    HALT      jump to `HALT` if accumulator equals 0
+C04A 054  -         jmp     END       jump to `END`
+0000 055  HALT      halt    HALT      end

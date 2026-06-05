@@ -1,0 +1,21 @@
+h1 {
+    text-align: center;
+
+}
+h2 {
+    text-align: center;
+}
+h3 {
+    text-align: center;
+}
+.name {
+    font-weight: bold;
+}
+.directions {
+    text-align: center;
+    font-style: italic;
+}
+
+.dialogue {
+    font-size: 12px;
+}

@@ -1,0 +1,10 @@
+# Large standard datasets / generated artifacts (kept in OneDrive, not pushed)
+**/dogscats/
+**/pickle_train
+**/pickle_test
+**/saved_info_*
+**/shakespeare/training/
+**/shakespeare/testing/
+__pycache__/
+*.python
+.DS_Store

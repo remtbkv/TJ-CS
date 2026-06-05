@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MADLIBS!</title>
+</head>
+
+<body>
+    <h1>MAD</h1>
+
+    <form action="submitted" method="POST" id ="myForm">
+        
+        <p>Choose which animal you want to see</p>
+        <select name="animal">
+            <option value="cat">Cat</option>
+            <option value="dog">Dog</option>
+            <option value="horse">Horse</option>
+        </select>
+
+        <p>Image size</p>
+        <select name="size">
+            <option value="100">Small</option>
+            <option value="250">Normal</option>
+            <option value="500">Big</option>
+        </select>
+
+        <p>Choose how you want to see your text</p>
+        <input type="checkbox" name="style" value="bold">Bold
+        <input type="checkbox" name="style" value="40">Big
+        <input type="checkbox" name="style" value="center">Centered
+
+        <p>Enter verb (singular, past tense)</p>
+        <input name="verb" type="text">
+        
+        <p>Enter animal</p>
+        <input name="noun" type="text">
+
+        <p>Enter adjective</p>
+        <input name="adjective" type="text">
+        
+        <br><br>
+        <input type="submit">
+    </form>
+</body>
+
+</html>

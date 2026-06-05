@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordle Helper</title>
+    <style>
+        * {
+            text-align: center; 
+        }
+        div {
+            width: 300px;
+            border: 15px solid green;
+            padding: 50px;
+            background-color: LightGray;
+            margin: auto;
+        }
+        input {
+            width:1.5ch;
+            padding: 1em;
+            text-transform: uppercase;
+        }   
+        button {
+            width: 10ch;
+            padding: 0.5em;
+        }
+        #excluded {
+            width: auto;
+            padding: 1em;
+            text-transform: uppercase;
+        }
+        #submit {
+            width: auto;
+            padding: 0.5em;
+            text-transform:initial
+        }
+    </style>
+</head>
+<body>
+    <h1>Worlde Word Finder</h1>
+    <br>
+    <div>
+        <h2>Enter correctly placed letters</h2>
+        <input type="text" id="c1" maxlength="1">
+        <input type="text" id="c2" maxlength="1">
+        <input type="text" id="c3" maxlength="1">
+        <input type="text" id="c4" maxlength="1">
+        <input type="text" id="c5" maxlength="1">
+        <br><br>
+        <h2>Enter misplaced letters</h2>
+        <input type="text" id="m1" maxlength="1">
+        <input type="text" id="m2" maxlength="1">
+        <input type="text" id="m3" maxlength="1">
+        <input type="text" id="m4" maxlength="1">
+        <input type="text" id="m5" maxlength="1">
+        <br><br>
+        <h2>Enter excluded letters: </h2>
+        <input type="text" id="excluded">
+        <br><br><br>
+        <button type="button" onclick="possibles()">Submit</button>
+        <br><br>
+    </div>
+    <br><br>
+    
+    <h2>Possible words:</h2>
+    <h3 id="words"></h3>
+    
+    <script>
+        async function possibles() {
+            let correct = [], misplaced = [], excluded = ""
+            for (let key of ["c1", "c2", "c3", "c4", "c5"])
+                correct.push(document.getElementById(key).value.toLowerCase())
+            for (let key of ["m1", "m2", "m3", "m4", "m5"])
+                misplaced.push(document.getElementById(key).value.toLowerCase())
+            excluded = document.getElementById("excluded").value.toLowerCase()
+            const response = await fetch('http://127.0.0.1:8080/wordfinder', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({"correct": correct, "misplaced": misplaced, "excluded": excluded})
+            });
+            let words = (await response.json()).join(", ")
+            document.getElementById("words").innerHTML = words.length>0 ? words : "No possible words!" 
+        }
+    </script>
+</body>
+</html>

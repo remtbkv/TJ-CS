@@ -1,0 +1,20 @@
+1. SELECT * FROM stadiums INNER JOIN teams WHERE t_conference='NFC' ORDER BY s_capacity
+
+-> 82500 -> (5021, 'MetLife Stadium', 82500, 'East Rutherford', 'New Jersey', 'UBU Speed Series S5-M Synthetic Turf', 'Open', 2010, 'WAS', 'Washington Commanders', 'NFC', 'East', 1932, None, 5009)
+
+
+2. SELECT * FROM players ORDER BY p_height
+
+-> 81 -> (1728, 'Skipper', 'Dan', 'T', 'DET', 70, 81, 330, '9/20/94', 'WAS', 'Washington Commanders', 'NFC', 'East', 1932, None, 5009)
+
+3. SELECT * FROM players INNER JOIN teams WHERE p_position='K' AND t_conference='AFC' AND t_division='South' ORDER BY p_height
+
+-> 68 -> (1668, 'Santos', 'Cairo', 'K', 'CHI', 2, 68, 175, '11/12/91', 'HOU', 'Houston Texans', 'AFC', 'South', 2002, None, 5023)
+
+4. find oldest franchise -> Chicaco Bears, 1920 ; SELECT * FROM players INNER JOIN teams WHERE t_name='Chicago Bears' AND p_position='RB' AND t_conference='NFC' AND t_division='North'
+
+-> a lot
+
+5. SELECT * FROM stadiums INNER JOIN teams ON stadiums.s_id=teams.t_stadium WHERE s_state='California' ORDER BY t_founded
+
+-> SoFi Stadium -> (5026, 'SoFi Stadium', 70000, 'Inglewood', 'California', 'Hellas Matrix Turf', 'Fixed', 2020, 'LAR', 'Los Angeles Rams', 'NFC', 'West', 1937, None, 5026)

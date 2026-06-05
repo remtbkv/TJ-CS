@@ -1,0 +1,18 @@
+.connect-board {
+    width: 860px;
+    height: 740px;
+    margin: auto;
+    fill-opacity: 100;
+    outline-style: solid;
+    outline-width: 5px;
+    background-color: blue;
+}
+
+.big {
+    font-size: 40px;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}

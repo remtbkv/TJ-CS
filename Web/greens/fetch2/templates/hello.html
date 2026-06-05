@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+  <h3>Eggs</h3>
+  <p id='food'>Food</p>
+  <button type="button" onclick="doTheFetch('eggs')">PRESS ME</button>
+
+  <script>
+    async function doTheFetch(food) {
+        const response = await fetch('http://127.0.0.1/kitchen')
+        const data = await response.json()
+        let counter_span = document.getElementById("food")
+        if (food === "eggs")
+            counter_span.innerHTML = "Eggs: " + data.eggs;
+        else if (food === "onions")
+            counter_span.innerHTML = "Onions: " + data.onions;
+        else if (food === "garlic")
+            counter_span.innerHTML = "Garlic: " + data.garlic;
+    }    
+
+    // async function increase(food) {
+    //     const response = await fetch('http://127.0.0.1/kitchen')
+    //     const data = await response.json()
+    //     let counter_span = document.getElementById("food")
+    //     if (food === "eggs") {
+    //         data.eggs++;
+    //         counter_span.innerHTML = "Eggs: " + data.eggs;
+    //         redirect('/set/{{food}}/{{data.eggs}}')
+    //     }
+    //     else if (food === "onions") {
+    //         data.onions++;
+    //         counter_span.innerHTML = "Onions: " +data.onions;
+    //         redirect('/set/{{food}}/{{data.onions}}')
+    //     }
+    //     else if (food === "garlic") {
+    //         data.garlic++;
+    //         counter_span.innerHTML = "Garlic: " + data.garlic;
+    //         redirect('/set/{{food}}/{{data.garlic}}')
+    //     }
+    // }
+  </script>
+</body>
+</html>

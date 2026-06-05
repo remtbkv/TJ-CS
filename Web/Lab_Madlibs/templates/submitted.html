@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Score!</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+</head>
+
+<body>
+    {% set styles = {"weight": "normal", "align": "left", "size": "20"} %}
+    {% for i in form.getlist('style') %}
+        {% if i=="bold" %}
+            {% if styles.update({"weight" : "bold"}) %} {% endif %}
+        {% elif i=="40" %}
+            {% if styles.update({"size" : "40"}) %} {% endif %}
+        {% elif i=="center" %}
+            {% if styles.update({"align" : "center"}) %} {% endif %}
+        {% endif %}
+    {% endfor %}
+    <h1 style="font-weight:{{styles.weight}}; text-align:{{styles.align}}; font-size:{{styles.size}}px">A really {{form.adjective}} {{form.animal}} {{form.verb}} all day until the {{form.noun}} got sick of it and put the {{form.animal}} in jail.</h1>
+
+    {% if form.animal == "cat" %}
+        <img src="/static/img/cat.jpg" id="animal" width="{{form.size}}" length="{{form.size}}">
+    {% elif form.animal == "dog" %}
+        <img src="/static/img/dog.jpg" id="animal" width="{{form.size}}" length="{{form.size}}">
+    {% elif form.animal == "horse" %}
+        <img src="/static/img/horse.jpg" id="animal" width="{{form.size}}" length="{{form.size}}">
+    {% endif %}
+</body>
+
+</html>

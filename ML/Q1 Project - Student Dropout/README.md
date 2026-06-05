@@ -1,0 +1,8 @@
+# Evaluating the Efficacy of Various Machine Learning Architectures in Predicting Student Dropout and Academic Success
+Our research stems from an ongoing discussion of the prevalence of dropouts in recent years, heightened by the COVID-19 pandemic. A student’s success in the workforce is largely dependent on their ability to achieve a higher education, especially in our time of such an oversaturated job market. Thus, it is necessary to analyze the potential of dropouts to ensure the success of students at various levels of education. We gather data from various higher education institutions regarding the performance of students in their respective schools, taking into account absenteeism, grades, and other factors to try and predict a student’s dropout and academic success. It is imperative that we are able to predict student dropout to plan appropriate intervention if necessary. In this project, we aim to construct a categorical classification machine learning model that learns to classify a student as one of three statuses—dropout, enrolled, and graduate. After taking steps to clean the data and sort it down to its core attributes, we hope to construct a model to be able to map a student’s statistics to their academic success at a certain institution. Several factors will be considered, including a student’s grades, the days they were absent, age of enrollment, as well as external factors, including scholarship and financial status. 
+
+## Running Code
+Download Weka software, and run corresponding analyses
+
+## Credits
+Submitted in completion of Q1 project, co-authored by Avery Li and Rem Turatbekov, TJHSST

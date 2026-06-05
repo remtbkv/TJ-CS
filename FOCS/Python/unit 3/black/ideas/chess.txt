@@ -1,0 +1,16 @@
+board=[]
+
+with open("saved.txt") as f:
+    for i in f:
+        board.append(list(i.strip()))
+
+for i in board:
+    print("| " + " | ".join(i) + " |")
+
+print()
+l=[3,2,1,0]
+for col in l:
+    for i in range(4):
+        print(board[col][i])
+    print("done")
+    

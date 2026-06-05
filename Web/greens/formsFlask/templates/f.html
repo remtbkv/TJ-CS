@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fun!</title>
+</head>
+
+<body>
+    <h1>Fun Form</h1>
+
+    <form action="thank_you" method="GET">
+        <p>What is the right answer?</p>
+        <input name="ans" type="text">
+        
+    </form>
+    <form action="formed" method="GET">
+        <p>Please select right answer</p>
+        <select name="choice">
+            <option value="left">Left</option>
+            <option value="right">Right</option>
+        </select>
+        <input type="submit">
+    </form>
+    <form action="checkboxed" method="GET">
+        <p>Please check </p>
+        <input type="checkbox" name="match" value="left">Left
+        <input type="checkbox" name="match" value="right">Right
+        <input type="submit">
+    </form>
+    <form action="multipled/" method="POST">
+        <label for="multi"><p>Please select</p></label>
+        <select multiple id="multi" name="multiple">
+            <option value="left">Left</option>
+            <option value="right">Right</option>
+        </select>
+        <input type="submit">
+    </form>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+1a. A
+1b. B
+1c. B
+1d. B
+
+2. drawOval(85, 85, 15, 15)
+
+3. 
+int[] xP = {10, 20, 20, 15, 10}
+int[] yP = {10, 10, 20, 25, 20}
+fillPolygon(xP, yP, 5)
+
+4.
+Because the color has been set to yellow for the sun
+
+5.
+This method is an abstract class that can be invoked by repaint()
+
+6.
+Can single shape (complex polygon) have multiple colors (half green half blue) without separating it into two separate polygons
+How do you color a shape with a radial gradient?

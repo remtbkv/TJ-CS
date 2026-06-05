@@ -1,0 +1,12 @@
+1. ITWASTHEBESTOFTIMESITWASTHEWORSTOFTIMES
+2. THETIMETORISEHASBEENENGAGED
+3. LETSSTARTWITHTHEENDOFTHEWORLDWHYDONTWE 
+4. OVERHEADWITHOUTANYFUSSTHESTARSWEREGOINGOUT
+5. THESUNSHONEHAVINGNOALTERNATIVEONTHENOTHINGNEW
+6. UPONTHESIDEWALKPEOPLEINEVERYDIRECTIONFQJ
+
+
+3 - i used my code with random c values (starting at 1) until i got it
+6 - i made a bruteforce function that tested the decode with all permutations of keys (abcdef...) of min length of 4 to max length of 8. the function also filtered for strings that contained atleast 10 real words. as i was scrolling through the output, i noticed several words forming including 'people' so with ctrl + f i was able to find the fully decoded message
+
+On my honor, I did not use any unauthorized tools on this assignment.

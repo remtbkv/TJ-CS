@@ -1,0 +1,20 @@
+0--- halt
+1?-- I/O op ( ? specifies options; see below)
+2?-? shift/rotation ( ?s specify options; see below)
+3xxx load accumulator from memory address xxx
+4xxx store accumulator into memory address xxx
+5xxx add value at address xxx to accumulator
+6xxx subtract value at address xxx from accumulator
+A--- bitwise 'not' (aka logical complement) of accumulator
+B--- do nothing (no operation)
+Cxxx jump to address xxx
+Dxxx jump to address xxx if accumulator equals zero
+Exxx jump to address xxx if accumulator is less than zero
+Fxxx branch and link; jump to address xxx and set the accumulator to the value of the address of the next instruction after this one
+
+
+For I/0:
+1000 - read hex number into accumulator
+1400 - read ASCII character into accumulator bits 8-15
+1800 - write hex number from the accumulator
+1C00 - wrte ASCII character from accumulator bits 8-15

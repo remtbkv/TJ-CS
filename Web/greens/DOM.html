@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The DOM</title>
+</head>
+
+<body>
+    <p id="a">Paragraph 1</p>
+    <p id="b">Paragraph 2</p>
+    <div id = "c">
+        <p>Div with paragraph 3 and a list</p>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+    <p id="d">Paragraph 4</p>
+    <p id="e">Log meeeeee</p>
+    <div id="f">
+        <p>5 - Start of div</p>
+        <ol>
+            <li>ABC</li>
+            <li>DEF</li>
+            <li>GHI</li>
+            <li>JKL</li>
+        </ol>
+        <p>5 - End of div</p>
+    </div>
+    <div id="g">
+        <p>6 - Start of div (first paragraph)</p>
+        <ol>
+            <li>Stuff</li>
+            <li>Here</li>
+        </ol>
+        <p>6 - End of div (first paragraph)</p>
+    </div>
+    
+    <p id="h">Enter letter (a -> e) to change corresponding object</p>
+    <p id="i">Holding z will change background color</p>
+    <script>
+
+        document.getElementById("a").onclick = changeColor1
+        document.getElementById("b").onclick = changeColor2
+        document.getElementById("c").addEventListener("click", changeColor3)
+        document.getElementById("d").onclick = changeColor4
+        document.getElementById("e").onclick = changeColor5
+        document.getElementById("f").onclick = changeColor6
+        document.querySelectorAll("#g>p").forEach((v) => {v.onclick = changeColor7})
+        window.addEventListener("keydown", (ev) => {document.getElementById(ev.key).style.backgroundColor = "black"})
+        window.addEventListener("keydown", (ev) => {if (ev.key=="z") document.body.style.backgroundColor = "turquoise"})
+        window.addEventListener("keyup", (ev) => {if (ev.key=="z") document.body.style.backgroundColor = ""})
+
+        function changeColor1(event) {
+            event.target.style.backgroundColor = "red"
+        }
+        function changeColor2() {
+            document.querySelector("#b").style.backgroundColor = "orange"
+        }
+        function changeColor3() {
+            document.querySelector("#c").style.backgroundColor = "yellow"
+        }
+        function changeColor4() {
+            el = document.querySelector("#d")
+            el.style.backgroundColor == "" ? el.style.backgroundColor = "green" : el.style.backgroundColor = ""
+        }
+        function changeColor5(event) {
+            console.log(event.target.id)
+        }
+        function changeColor6() {
+            document.querySelectorAll("#f p").forEach((v) => v.style.backgroundColor="blue")
+        }
+        function changeColor7(event) {
+            event.target.style.backgroundColor = "violet"
+        }
+    </script>
+</body>
+
+</html>

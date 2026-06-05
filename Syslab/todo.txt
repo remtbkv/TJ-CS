@@ -1,0 +1,37 @@
+test "done" margins for physical model and CV limitations
+ - currently doesn't render own interpetation of simulation. first get it working
+
+self.make_env isnt initializing cartpole properly? render_mode is missing
+
+THE OLD PLT WINDOW DOESNT CLOSE OR DELETED? TRYING TO CREATE ANOTHER SO IT DEFAULTS OPEN THE NEW ONE
+- can be fixed by doing away wiht alt b and just reopening the window
+
+error: unable to share contexts after 1 run of testing (cartpole)
+    Exception ignored in: <function Viewer.__del__ at 0x000001D9E7944400>
+    Traceback (most recent call last):
+    File "C:\Users\remtb\AppData\Local\Programs\Python\Python312\Lib\site-packages\gym\envs\classic_control\rendering.py", line 152, in __del__
+        self.close()
+    File "C:\Users\remtb\AppData\Local\Programs\Python\Python312\Lib\site-packages\gym\envs\classic_control\rendering.py", line 71, in close
+        self.window.close()
+        ^^^^^^^^^^^
+    AttributeError: 'Viewer' object has no attribute 'window'
+
+    "The error AttributeError: 'Viewer' object has no attribute 'window' suggests that self.window is missing when
+    self.close() is called inside the __del__ method. This usually happens when the object is being garbage collected
+    but wasn't fully initialized or was partially deleted before __del__ ran."
+
+plt window opens separately after deletion
+- reproduce: run any test then alt b anywhere
+
+wrap error text to not extend past initial size
+ - otherwise terminal messed up with blocks
+embed testing into tkinter (FigureCanvasTkAgg)
+dont update file if its the same, load in file functionality?
+
+in ballbeam.py, self.I represnts solid ball inertia but omits mass
+ - could lead to inaccuracies
+
+motor physical limitation
+    - in update() of ballbeam.py, OA made note that "simulation could be improved further by using voltage as input and a motor simulation deciding theta"
+    - insead of angular acceleration, more accurate to use torque
+    - talk to D about stepper motor from robolab (its a rotary encoder used in 3d printers, very good)

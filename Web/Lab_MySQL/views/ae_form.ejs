@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Equipment</title>
+</head>
+
+<body>
+    <form action="/2025rturatbe/assign" method='POST'>
+        <h3>Choose character</h3>
+        <input type="hidden" name="table" value="assigned_e">
+        <select name="character">
+            <% for (let i=0; i<c.length; i++) { %>
+                <option value="<%=c[i]['c_id']%>">
+                    <%=c[i]["c_name"]%>
+                </option>
+            <% } %>
+        </select>
+        <br>
+        <h3>Choose equipment</h3>
+        <% for (let i=0; i<e.length; i++) { %>
+            <input type="checkbox" name="<%=e[i]['e_id']%>" value="<%=e[i]['e_id']%>">
+            <%=e[i]['e_name']%> <br>
+        <% } %>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+</html>

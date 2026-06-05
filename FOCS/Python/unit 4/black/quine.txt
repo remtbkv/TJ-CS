@@ -1,0 +1,8 @@
+3000 load
+D007 jmpe
+1800 print
+3000 load load
+5007 add one
+4000 store
+C000 jump start
+0001 halt/one

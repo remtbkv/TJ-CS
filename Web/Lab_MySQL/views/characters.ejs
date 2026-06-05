@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character</title>
+</head>
+<body>
+    <h1>Stats for <%=cinfo['c_name']%></h1>
+
+    <h3>Power</h3>
+    <p>Wit: <%= cinfo['c_wit'] %></p>
+    <p>Strength: <%= cinfo['c_strength'] %></p>
+    <p>Attack: <%= cinfo['c_attack'] %></p>
+    <p>Defense: <%= cinfo['c_defense']%></p>
+    <p>Magic: <%= cinfo['c_magic']%></p>
+    <h3>Assigned equipment</h3>
+    <% for (let i=0; i<equips.length; i++) { %>
+        <p><%=equips[i]['e_name']%></p>
+    <% } %>
+
+    <h3>Assigned quests</h3>
+    <% for (let i=0; i<quests.length; i++) { %>
+        <p><%=quests[i]['q_desc']%></p>
+    <% } %>
+    
+    <br>
+    <h1>Update stats</h1>
+    <form action="/2025rturatbe/update" method='POST'>
+        <input type="hidden" name="c_name" value=<%=cinfo['c_name']%>
+        
+        <p>Wit</p>
+        <input type="text" name="c_wit">
+       
+        <p>Strength</p>
+        <input type="text" name="c_strength">
+       
+        <p>Attack</p>
+        <input type="text" name="c_attack">
+       
+        <p>Defense</p>
+        <input type="text" name="c_defense">
+        
+        <p>Magic</p>
+        <input type="text" name="c_magic">
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    
+</body>
+</html>

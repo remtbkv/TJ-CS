@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie page</title>
+    <script>
+
+    </script>
+</head>
+<body>
+    <p id="numTimes">View page <%=number%> times</p>
+    <label for="name">Cookie name to set:</label>
+    <input type="text" id="cookieName">
+    <br>
+    <label for="value">Cookie value:</label>
+    <input type="text" id="cookieValue">
+    <br>
+    <button onclick="setCookie()">Set Cookie</button>
+    <br><br>
+    <label for="name">Cookie name to find:</label>
+    <input type="text" id="cookieNameToFind">
+    <br>
+    <button onclick="findCookie()">Cookie name to display: </button>
+    <p id="displayedCookie">Enter cookie name to display</p>
+    <script>
+        function setCookie() {
+            var cval = document.getElementById("cookieValue").value;
+            var cname = document.getElementById("cookieName").value;
+            document.cookie = `${cname}=${cval}; expires=Fri, 31 Dec 2024 23:59:59 GMT; path=/`;
+        }
+        function findCookie() {
+            const all_cookies_array = document.cookie.split('; ');
+            var name = document.getElementById("cookieNameToFind").value;
+            const unparsed_val = all_cookies_array.find(function (elem) {
+                return elem.startsWith(`${name}=`);
+            })
+            const cookie_array = unparsed_val.split('=');
+            const cookie_val = decodeURIComponent(cookie_array[1])
+            console.log(cookie_val)
+            document.getElementById("displayedCookie").innerHTML = "'"+cookie_val+"'"
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,16 @@
+The video began with the explanation of boxes—each representing the power of the respective base. An example of this was for base 3, where it would start with 3^0 = 1, then increment the power of the base, so 3^1 = 3, 3^2 = 9, and so forth. But more practically, bases of 10 is how we get the ones/tens/hundreds place. However, a subtle purpose of base 2 (that many people overlook) is the usage in computers, where 0 is off/false, and 1 is on/true. In the end, bases are very important in the understanding of modern conventional methods. Calendars are in base 12, our number counting is in base 10, and computers are in base 2. Bases really are interesting!
+
+1 -> 2 machine:
+Never ending row where you explode 1 dot and adding 2 to the left with a pattern of 1, 2, 4, 8, etc.
+
+3 -> 1 machine:
+Exploding 1 dot and adding 3 to the left with a pattern of 1, 3, 6, 9, etc.
+BASE 3
+
+10 -> 1 machine:
+Exploding 10 dots and adding 1 to the left with a pattern of 1, 10, 100, 1000, etc.
+BASE 10
+
+
+Island 9:
+The video was about a 3 -> 2 machine where you explode every 3 dots and add 2 to the box to the left. It was essentially going in base 1.5 (3/2) where the rightmost box was (3/2)^0, then to the left is (3/2)^1, and it goes on like this increasing the power. This was pretty cool looking at how a whole number '13' could be turned into 2121 in base 1.5, aka 2*(27/8) + 1*(9/4) + 2*(3/2) + 1 = 13.

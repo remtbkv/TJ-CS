@@ -1,0 +1,38 @@
+have cmake text file in lab folder
+
+to compile code with OpenCV:
+
+cp [filename].cpp c.cpp
+
+this copies the code into current file
+
+----
+cmake .
+
+run this only once to create makefile
+----
+
+FOR UNIX:
+make 
+
+FOR WINDOWS:
+cmake --build . --config Release
+
+this compiles code with cmaked file
+----
+
+./run
+
+runs the code
+
+
+
+----
+
+this stuff makes it version 17
+
+cmake -B build -DCMAKE_CXX_STANDARD=17 . 
+cmake --build build --config Release
+./build/release/run
+
+cmake --build C:/foo/build/ 

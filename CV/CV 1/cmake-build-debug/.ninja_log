@@ -1,0 +1,17 @@
+# ninja log v5
+3	58	7160812098084261	CMakeFiles/CV.dir/main.cpp.obj	99b26f523353aff5
+3	639	7165315169222761	CMakeFiles/CV.dir/Project1/l01.cpp.obj	8f2c33d0e2244f3d
+3	935	7196859357211201	CMakeFiles/CV.dir/Project3/l032.cpp.obj	d0002f6d5e40c6dc
+1364	1584	7269908293513026	CV.exe	44c4c32236ffef60
+1	161	7274038344391832	build.ninja	d12b65626f2b83c7
+3	1138	7180041110634644	CMakeFiles/CV.dir/Project2/l022.cpp.obj	8163e46f3e8677f2
+3	513	7192000211490984	CMakeFiles/CV.dir/Project2/l021.cpp.obj	18377a676941b913
+3	800	7180838391264343	CMakeFiles/CV.dir/Project3/l031.cpp.obj	2779d1dfe45f701d
+4	966	7216954965380921	CMakeFiles/CV.dir/Project3/l033.cpp.obj	6add86b253da5000
+4	1260	7213740754747358	CMakeFiles/CV.dir/Project3/l034.cpp.obj	5b508fe88219bd2a
+4	761	7223814744854345	CMakeFiles/CV.dir/Project4/l041.cpp.obj	ac31cd9befee36a6
+2	1343	7229320167956382	CMakeFiles/CV.dir/Project4/l042.cpp.obj	dce412d5eed87fe3
+7	1938	7241163773126472	CMakeFiles/CV.dir/Project5/l051.cpp.obj	bbf88bf2a1778be2
+2	594	7269095761484179	CMakeFiles/CV.dir/Project5/l052.cpp.obj	2e7d6f85a3bafe5b
+3	509	7260425415820592	CMakeFiles/CV.dir/Project5/l052_j.cpp.obj	d1614b00c7fba322
+5	1362	7269908291352053	CMakeFiles/CV.dir/Project5/l053.cpp.obj	e8fabecd3a7dc799

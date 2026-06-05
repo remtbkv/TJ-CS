@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect 4</title>
+    <link rel="stylesheet" href="css/connect.css">
+</head>
+<body>
+    <h1 class="big">Connect 4</h1>
+    <div class="center">
+        <svg id="board" class="connect-board">
+            <% for (let i=0; i<7; i++) { %>
+                <% for (let j=0; j<6; j++) { %>
+                    <circle id="<%=j%>,<%=i%>" row="<%=j%>" col="<%=i%>" cx="<%=50+i*100+20*(i+1)%>" cy="<%=50+j*100+20*(j+1)%>" r="50" stroke="black" stroke-width="5" fill="white" />
+                <% } %>
+            <% } %>
+        </svg>
+    </div>
+    <h1 class="big" id="status"></h1>
+    <script src="js/connect.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+------------------------------------------------------------------------
+a.
+
+n = 0, 1, 2, 3, 4, 9, 20
+
+0, true
+1, false
+3, false
+4, true
+9, false
+20, true
+------------------------------------------------------------------------
+b.
+
+if even = true (0 also true)
+if odd = false
+(also implied that there are no negatives)
+
+------------------------------------------------------------------------
+c.
+
+def alternate(n):
+	if n%2 == 0 and n>=0:
+		return True
+	if n%2 == 1 and n>=0:
+		return False
+
+------------------------------------------------------------------------
+d.
+
+if num is a positive digit then the recusion is gaurunteed to end
+
+------------------------------------------------------------------------
+e.
+
+def mystery_two(num):
+    if num == 0:
+        return 0
+    else:
+	return num % 10 + mystery_two(num // 10)
+			
+n = 12, 21, 123, 427
+
+return 12%10 + mystery_two(12 // 10)
+	2 + (1)  =  3
+
+return 21%10 + mystery_two(21 // 10)
+	1 + (2)  =  3
+
+return 123%10 + mystery_two(123 // 10)
+	3 + mystery_two(12)
+		3 + 2 + 1   =  6
+
+return 427%10 + mystery_two(427 // 10)
+	7 + mystery_two(42)
+		7 + [2 + mystery_two(4)] 
+			7 + 2 + 4   =  13
+
+------------------------------------------------------------------------
+f.
+
+this function adds the digits of the number together (in reverse order)
+first, it takes the last digit of the number by doing % 10 and stores it to add to the other digits in the end
+next, it (floor) divides the number by 10 in order to break it down by 1 more digit
+third, the function repeats itself where it takes the last digit of ^^^^ and then proceeds to...
+fourth, break down that digit by 1 again and continue the cycle
+
+if at any point the amount of digits in the number goes to 1, thats where the recursion stops and it adds that number to the other digits
+
+------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		

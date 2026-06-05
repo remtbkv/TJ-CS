@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forecast</title>
+</head>
+
+<body>
+    <h1>Forecast at <%= location["city"] %><%= location["state"] %></h1>
+    <br>
+    <% for (let i=0; i<forecast.length; i++) { %>
+        <h3><%=forecast[i]["name"]%>'s summary:</h3>
+        <p>
+            <%= forecast[i]["detailedForecast"] %>  
+        </p>
+        <br>
+    <% } %>
+</body>
+
+</html>
